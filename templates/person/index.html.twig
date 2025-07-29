@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulář{% endblock %}
+
+{% block body %}
+    <h2>Zadej jméno osoby</h2>
+
+    {% for message in app.flashes('success') %}
+        <div style="background: #d4edda; padding: 1em; margin-bottom: 1em; border-radius: 5px;">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        <button type="submit">Uložit</button>
+    {{ form_end(form) }}
+{% endblock %}
