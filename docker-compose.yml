@@ -11,8 +11,6 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
-    depends_on:
-      - db
     command: /bin/sh -c "echo 'Symfony app running at http://localhost:8000' && php -S 0.0.0.0:8000 -t public"
 
   db:
